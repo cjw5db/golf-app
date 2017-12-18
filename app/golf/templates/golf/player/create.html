@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>
+        {% block pagetitle %}
+        Player Creation
+        {% endblock %}
+    </h2>
+
+    {% include 'golf/player/_form.html' %}
+
+{% endblock %}

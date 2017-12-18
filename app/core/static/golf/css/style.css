@@ -1,0 +1,85 @@
+* {
+    /* universal selector */
+}
+
+#content h1 {
+    font-size: 20pt;
+}
+
+#content h2 {
+    font-size: 16pt;
+}
+
+header {
+    margin: 0 0 0 50px;
+    text-align: center;
+    font: 12pt sans;
+}
+
+#logo {
+    font-family: 'Helvetica', cursive;
+    font-size: 32pt;
+    font-weight: bold;
+    float: left;
+    text-align: center;
+    /*color: #fff;*/
+    color: #000;
+    letter-spacing: -1px;
+}
+
+#logo a, #logo a:hover, #logo a:visited, #logo a:link {
+    /*color: #fff;*/
+    color: #000;
+    text-decoration: none;
+}
+
+#container {
+    text-align: center;
+    font: 12pt sans;
+}
+
+main {
+    margin: 0 100px 0 100px;
+    text-align: left;
+}
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid #eaeaea;
+    color: deeppink;
+}
+
+footer a {
+    color: #555;
+}
+
+footer a:hover {
+    color: #222;
+}
+
+footer small {
+    float: left;
+}
+
+footer ul {
+    float: right;
+    list-style: none;
+}
+
+footer ul li {
+    float: left;
+    margin-left: 15px;
+}
+
+section {
+    overflow: auto;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.word-wrap {
+    word-break: break-all;
+}

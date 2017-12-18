@@ -7,4 +7,16 @@
 		{% endblock %}
 	</h2>
 
+	<h4>Teams</h4>
+	<ul>
+		<li><a href="{% url 'golf:teams:create' %}">Create Team</a></li>
+		<li><a href="{% url 'golf:teams:list' %}">List Teams</a></li>
+	</ul>
+
+	<h4>Players</h4>
+	<ul>
+		<li><a href="{% url 'golf:player:create' %}">Create Player</a></li>
+		<li><a href="{% url 'golf:player:list' %}">List Players</a></li>
+	</ul>
+
 {% endblock %}

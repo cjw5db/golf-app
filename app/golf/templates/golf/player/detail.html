@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+  <h2>
+      {% block pagetitle %}
+      Player Details
+      {% endblock %}
+  </h2>
+
+  <p>Name: {{ player.name }}</p>
+  <p>Handicap: {{ player.handicap }}</p>
+  <p>Team: {{ player.team }}</p>
+
+{% endblock %}
