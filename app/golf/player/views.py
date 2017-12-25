@@ -40,7 +40,7 @@ def detail(request, pk, **kwargs):
         )
 
 def list(request, **kwargs):
-    players = Player.objects.all()
+    players = Player.objects.order_by('handicap')
     return render(request, 'golf/player/list.html',
                 {
                     'players': players,

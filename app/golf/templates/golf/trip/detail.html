@@ -19,17 +19,35 @@
 <p>No Teams</p>
 {% endfor %}
 
+{% for round in round_list %}
+<p><b>ROUND: {{round|add:"1"}}</b></p>
 <table class="table table-hover">
   <thead>
       <tr>
-        <th>Group</th>
-        {% for round in round_list %}
-        <th>Round: {{round|add:"1"}}</th>
+        <!-- <th>Matchup #</th> -->
+        {% for team in trip.teams.all %}
+        <th>{{team.name}}</th>
         {% endfor %}
       </tr>
   </thead>
 
+  <tbody>
+      {% for group in groups %}
+      {% if group.0.round == round|add:"1" %}
+      <tr>
+        <td>
+          <p>{{group.0.players.first}} and {{group.0.players.last}} </p>
+        </td>
+        <td>
+          <p>{{group.1.players.first}} and {{group.1.players.last}} </p>
+        </td>
+      </tr>
+      {% endif %}
+      {% endfor %}
+  </tbody>
+
 </table>
+{% endfor %}
 
 <a role="button" class="btn btn-danger confirm-delete"
     href="{% url 'golf:trip:delete' trip.pk %}">Delete Trip</a>

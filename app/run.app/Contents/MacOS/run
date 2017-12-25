@@ -1,0 +1,7 @@
+#!/bin/bash
+
+source ~/virtenvs/golf/bin/activate 
+
+open ~/Desktop/Google\ Chrome "http://127.0.0.1:8000/"
+
+python ~/virtenvs/golf/golf-app/app/manage.py runserver
