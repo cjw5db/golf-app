@@ -25,7 +25,7 @@ def create(request, **kwargs):
 
 def detail(request, pk, **kwargs):
     team = get_object_or_404(Team, pk=pk)
-    players = team.player_set.all()
+    players = team.player_set.all().order_by('handicap')
 
     return render(request, 'golf/teams/detail.html',
             {
@@ -42,3 +42,8 @@ def list(request, **kwargs):
                     'teams': teams,
                 }
             )
+
+def delete(request, pk, **kwargs):
+    team = get_object_or_404(Team, pk=pk)
+    team.delete()
+    return redirect('golf:teams:list')

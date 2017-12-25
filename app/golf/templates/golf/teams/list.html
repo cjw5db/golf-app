@@ -10,14 +10,18 @@
     <thead>
         <tr>
           <th>Name</th>
+          <th>Number of Players</th>
         </tr>
     </thead>
 
     <tbody>
         {% for team in teams %}
         <tr>
-          <td class="clickable-obj" data-href="{{ team.get_absolute_url }}">
+          <td>
             {{ team.name }}
+          </td>
+          <td>
+            {{ team.player_set.count }}
           </td>
 
           <td class="btn-group" align="right">
@@ -27,5 +31,8 @@
         {% endfor %}
     </tbody>
 </table>
+
+<a role="button" class="btn btn-primary confirm-leave"
+  href="{% url "golf:teams:create" %}">Create Team</a>
 
 {% endblock %}

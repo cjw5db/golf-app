@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>
+    {% block pagetitle %}
+    Trip Detail
+    {% endblock %}
+</h2>
+
+<p>Name: {{ trip.name }}</p>
+<p>Number of Rounds: {{ trip.rounds }}</p>
+<p>Team Size: {{ trip.team_size }} </p>
+
+<p>Teams:</p>
+{% for team in trip.teams.all %}
+<p>{{ forloop.counter }}. {{ team.name }}</p>
+{% empty %}
+<p>No Teams</p>
+{% endfor %}
+
+<table class="table table-hover">
+  <thead>
+      <tr>
+        <th>Group</th>
+        {% for round in round_list %}
+        <th>Round: {{round|add:"1"}}</th>
+        {% endfor %}
+      </tr>
+  </thead>
+
+</table>
+
+<a role="button" class="btn btn-danger confirm-delete"
+    href="{% url 'golf:trip:delete' trip.pk %}">Delete Trip</a>
+
+{% endblock %}

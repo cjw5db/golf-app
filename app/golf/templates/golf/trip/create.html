@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>
+        {% block pagetitle %}
+        Trip Creation
+        {% endblock %}
+    </h2>
+
+    {% include 'golf/trip/_form.html' %}
+
+{% endblock %}

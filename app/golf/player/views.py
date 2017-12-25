@@ -2,8 +2,12 @@ from django.http import HttpResponseBadRequest
 from django.shortcuts import redirect, render, get_object_or_404
 from ..models import Team, Player
 from .forms import PlayerForm
+from django.contrib.auth.models import User
 
 def create(request, **kwargs):
+
+    print(User.objects.all())
+
     form = PlayerForm(request.POST or None)
 
     if request.method == 'POST':
@@ -25,10 +29,12 @@ def create(request, **kwargs):
 
 def detail(request, pk, **kwargs):
     player = get_object_or_404(Player, pk=pk)
+    team = player.team
 
     return render(request, 'golf/player/detail.html',
             {
                 'player': player,
+                'team': team,
 
             }
         )
@@ -40,3 +46,9 @@ def list(request, **kwargs):
                     'players': players,
                 }
             )
+
+def delete(request, pk, **kwargs):
+    player = get_object_or_404(Player, pk=pk)
+    player.delete()
+
+    return redirect('golf:player:list')

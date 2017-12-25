@@ -10,6 +10,15 @@
 
   <p>Name: {{ player.name }}</p>
   <p>Handicap: {{ player.handicap }}</p>
-  <p>Team: {{ player.team }}</p>
+
+  <p>Team: {{ team }}</p>
+
+
+  <a role="button" class="btn btn-danger confirm-delete"
+    href="{% url 'golf:player:delete' player.pk %}">Delete Player</a>
+
+  <a role="button" class="btn btn-primary confirm-delete"
+    href="{% url 'golf:teams:detail' team.pk %}">View Team</a>
+
 
 {% endblock %}

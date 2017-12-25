@@ -9,11 +9,20 @@
   </h2>
 
   <p>Name: {{ team.name }}</p>
+
   <p>Players: </p>
   {% for player in players%}
   <p>{{ forloop.counter }}: {{ player.name }}</p>
   {% empty %}
   <p>No players at this time</p>
   {% endfor %}
+
+  <a role="button" class="btn btn-danger confirm-delete"
+    href="{% url 'golf:teams:delete' team.pk %}">Delete Team</a>
+
+  <a role="button" class="btn btn-primary confirm-delete"
+    href="{% url 'golf:player:create' %}">Create Player</a>
+
+
 
 {% endblock %}

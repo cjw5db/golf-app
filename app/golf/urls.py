@@ -6,5 +6,6 @@ app_name='golf'
 urlpatterns = [
     url(r'^teams/', include('golf.teams.urls', namespace='teams')),
     url(r'^player/', include('golf.player.urls', namespace='player')),
+    url(r'^trip/', include('golf.trip.urls', namespace='trip')),
     url(r'^$', views.index, name='home'),
 ]
